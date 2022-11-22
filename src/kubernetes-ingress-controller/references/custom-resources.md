@@ -1,6 +1,7 @@
---- 
+---
 title: Custom Resource Definitions
 ---
+<!-- vale off -->
 
 ## Packages
 - [configuration.konghq.com/v1](#configurationkonghqcomv1)
@@ -542,3 +543,5 @@ _Appears in:_
 | Field | Description |
 | --- | --- |
 | `rules` _[UDPIngressRule](#udpingressrule) array_ | A list of rules used to configure the Ingress. |
+
+<!-- vale on -->
