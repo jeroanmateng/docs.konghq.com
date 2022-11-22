@@ -1,4 +1,4 @@
----
+--- 
 title: Custom Resource Definitions
 ---
 
@@ -12,7 +12,6 @@ title: Custom Resource Definitions
 
 Package v1 contains API Schema definitions for the konghq.com v1 API group.
 
-### Resource Types
 - [KongClusterPlugin](#kongclusterplugin)
 - [KongClusterPluginList](#kongclusterpluginlist)
 - [KongConsumer](#kongconsumer)
@@ -24,7 +23,7 @@ Package v1 contains API Schema definitions for the konghq.com v1 API group.
 
 
 
-#### ConfigSource
+### ConfigSource
 
 
 
@@ -38,7 +37,7 @@ _Appears in:_
 | `secretKeyRef` _[SecretValueFromSource](#secretvaluefromsource)_ |  |
 
 
-#### KongClusterPlugin
+### KongClusterPlugin
 
 
 
@@ -62,7 +61,7 @@ _Appears in:_
 | `ordering` _PluginOrdering_ | Ordering overrides the normal plugin execution order. |
 
 
-#### KongClusterPluginList
+### KongClusterPluginList
 
 
 
@@ -78,7 +77,7 @@ KongClusterPluginList contains a list of KongClusterPlugin.
 | `items` _[KongClusterPlugin](#kongclusterplugin) array_ |  |
 
 
-#### KongConsumer
+### KongConsumer
 
 
 
@@ -97,7 +96,7 @@ _Appears in:_
 | `credentials` _string array_ | Credentials are references to secrets containing a credential to be provisioned in Kong. |
 
 
-#### KongConsumerList
+### KongConsumerList
 
 
 
@@ -113,7 +112,7 @@ KongConsumerList contains a list of KongConsumer.
 | `items` _[KongConsumer](#kongconsumer) array_ |  |
 
 
-#### KongIngress
+### KongIngress
 
 
 
@@ -132,7 +131,7 @@ _Appears in:_
 | `route` _[KongIngressRoute](#kongingressroute)_ | Route define rules to match client requests. Each Route is associated with a Service, and a Service may have multiple Routes associated to it. |
 
 
-#### KongIngressList
+### KongIngressList
 
 
 
@@ -148,7 +147,7 @@ KongIngressList contains a list of KongIngress.
 | `items` _[KongIngress](#kongingress) array_ |  |
 
 
-#### KongIngressRoute
+### KongIngressRoute
 
 
 
@@ -172,7 +171,7 @@ _Appears in:_
 | `response_buffering` _boolean_ | ResponseBuffering sets whether to enable response body buffering or not. |
 
 
-#### KongIngressService
+### KongIngressService
 
 
 
@@ -191,7 +190,7 @@ _Appears in:_
 | `write_timeout` _integer_ | The timeout in milliseconds between two successive write operations for transmitting a request to the upstream server. |
 
 
-#### KongIngressUpstream
+### KongIngressUpstream
 
 
 
@@ -218,7 +217,7 @@ _Appears in:_
 | `hash_fallback_uri_capture` _string_ | HashFallbackURICapture is the "hash_fallback" version of HashOnURICapture. |
 
 
-#### KongPlugin
+### KongPlugin
 
 
 
@@ -242,7 +241,7 @@ _Appears in:_
 | `ordering` _[PluginOrdering](#pluginordering)_ | Ordering overrides the normal plugin execution order. |
 
 
-#### KongPluginList
+### KongPluginList
 
 
 
@@ -258,7 +257,7 @@ KongPluginList contains a list of KongPlugin.
 | `items` _[KongPlugin](#kongplugin) array_ |  |
 
 
-#### KongProtocol
+### KongProtocol
 
 _Underlying type:_ `string`
 
@@ -271,7 +270,7 @@ _Appears in:_
 
 
 
-#### NamespacedConfigSource
+### NamespacedConfigSource
 
 
 
@@ -285,7 +284,7 @@ _Appears in:_
 | `secretKeyRef` _[NamespacedSecretValueFromSource](#namespacedsecretvaluefromsource)_ |  |
 
 
-#### NamespacedSecretValueFromSource
+### NamespacedSecretValueFromSource
 
 
 
@@ -301,7 +300,7 @@ _Appears in:_
 | `key` _string_ | The key containing the value. |
 
 
-#### SecretValueFromSource
+### SecretValueFromSource
 
 
 
@@ -321,13 +320,12 @@ _Appears in:_
 
 Package v1alpha1 contains API Schema definitions for the configuration.konghq.com v1alpha1 API group.
 
-### Resource Types
 - [IngressClassParameters](#ingressclassparameters)
 - [IngressClassParametersList](#ingressclassparameterslist)
 
 
 
-#### IngressClassParameters
+### IngressClassParameters
 
 
 
@@ -344,7 +342,7 @@ _Appears in:_
 | `spec` _[IngressClassParametersSpec](#ingressclassparametersspec)_ |  |
 
 
-#### IngressClassParametersList
+### IngressClassParametersList
 
 
 
@@ -360,7 +358,7 @@ IngressClassParametersList contains a list of IngressClassParameters.
 | `items` _[IngressClassParameters](#ingressclassparameters) array_ |  |
 
 
-#### IngressClassParametersSpec
+### IngressClassParametersSpec
 
 
 
@@ -380,7 +378,6 @@ _Appears in:_
 
 Package v1beta1 contains API Schema definitions for the configuration.konghq.com v1beta1 API group.
 
-### Resource Types
 - [TCPIngress](#tcpingress)
 - [TCPIngressList](#tcpingresslist)
 - [UDPIngress](#udpingress)
@@ -388,7 +385,7 @@ Package v1beta1 contains API Schema definitions for the configuration.konghq.com
 
 
 
-#### IngressBackend
+### IngressBackend
 
 
 
@@ -404,7 +401,7 @@ _Appears in:_
 | `servicePort` _integer_ | Specifies the port of the referenced service. |
 
 
-#### IngressRule
+### IngressRule
 
 
 
@@ -420,7 +417,7 @@ _Appears in:_
 | `backend` _[IngressBackend](#ingressbackend)_ | Backend defines the referenced service endpoint to which the traffic will be forwarded to. |
 
 
-#### IngressTLS
+### IngressTLS
 
 
 
@@ -435,7 +432,7 @@ _Appears in:_
 | `secretName` _string_ | SecretName is the name of the secret used to terminate SSL traffic. |
 
 
-#### TCPIngress
+### TCPIngress
 
 
 
@@ -452,7 +449,7 @@ _Appears in:_
 | `spec` _[TCPIngressSpec](#tcpingressspec)_ |  |
 
 
-#### TCPIngressList
+### TCPIngressList
 
 
 
@@ -468,7 +465,7 @@ TCPIngressList contains a list of TCPIngress.
 | `items` _[TCPIngress](#tcpingress) array_ |  |
 
 
-#### TCPIngressSpec
+### TCPIngressSpec
 
 
 
@@ -485,7 +482,7 @@ _Appears in:_
 
 
 
-#### UDPIngress
+### UDPIngress
 
 
 
@@ -502,7 +499,7 @@ _Appears in:_
 | `spec` _[UDPIngressSpec](#udpingressspec)_ |  |
 
 
-#### UDPIngressList
+### UDPIngressList
 
 
 
@@ -518,7 +515,7 @@ UDPIngressList contains a list of UDPIngress.
 | `items` _[UDPIngress](#udpingress) array_ |  |
 
 
-#### UDPIngressRule
+### UDPIngressRule
 
 
 
@@ -533,7 +530,7 @@ _Appears in:_
 | `backend` _[IngressBackend](#ingressbackend)_ | Backend defines the Kubernetes service which accepts traffic from the listening Port defined above. |
 
 
-#### UDPIngressSpec
+### UDPIngressSpec
 
 
 
