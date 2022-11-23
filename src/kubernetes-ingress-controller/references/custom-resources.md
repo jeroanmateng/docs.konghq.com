@@ -14,13 +14,9 @@ title: Custom Resource Definitions
 Package v1 contains API Schema definitions for the konghq.com v1 API group.
 
 - [KongClusterPlugin](#kongclusterplugin)
-- [KongClusterPluginList](#kongclusterpluginlist)
 - [KongConsumer](#kongconsumer)
-- [KongConsumerList](#kongconsumerlist)
 - [KongIngress](#kongingress)
-- [KongIngressList](#kongingresslist)
 - [KongPlugin](#kongplugin)
-- [KongPluginList](#kongpluginlist)
 
 
 
@@ -30,22 +26,19 @@ Package v1 contains API Schema definitions for the konghq.com v1 API group.
 
 ConfigSource is a wrapper around SecretValueFromSource.
 
-_Appears in:_
-- [KongPlugin](#kongplugin)
-
 | Field | Description |
 | --- | --- |
 | `secretKeyRef` _[SecretValueFromSource](#secretvaluefromsource)_ |  |
 
+
+_Appears in:_
+- [KongPlugin](#kongplugin)
 
 ### KongClusterPlugin
 
 
 
 KongClusterPlugin is the Schema for the  API.
-
-_Appears in:_
-- [KongClusterPluginList](#kongclusterpluginlist)
 
 | Field | Description |
 | --- | --- |
@@ -62,20 +55,6 @@ _Appears in:_
 | `ordering` _PluginOrdering_ | Ordering overrides the normal plugin execution order. |
 
 
-### KongClusterPluginList
-
-
-
-KongClusterPluginList contains a list of KongClusterPlugin.
-
-
-
-| Field | Description |
-| --- | --- |
-| `apiVersion` _string_ | `configuration.konghq.com/v1`
-| `kind` _string_ | `KongClusterPluginList`
-| `metadata` _[ListMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#listmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |
-| `items` _[KongClusterPlugin](#kongclusterplugin) array_ |  |
 
 
 ### KongConsumer
@@ -83,9 +62,6 @@ KongClusterPluginList contains a list of KongClusterPlugin.
 
 
 KongConsumer is the Schema for the kongconsumers API.
-
-_Appears in:_
-- [KongConsumerList](#kongconsumerlist)
 
 | Field | Description |
 | --- | --- |
@@ -97,20 +73,6 @@ _Appears in:_
 | `credentials` _string array_ | Credentials are references to secrets containing a credential to be provisioned in Kong. |
 
 
-### KongConsumerList
-
-
-
-KongConsumerList contains a list of KongConsumer.
-
-
-
-| Field | Description |
-| --- | --- |
-| `apiVersion` _string_ | `configuration.konghq.com/v1`
-| `kind` _string_ | `KongConsumerList`
-| `metadata` _[ListMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#listmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |
-| `items` _[KongConsumer](#kongconsumer) array_ |  |
 
 
 ### KongIngress
@@ -118,9 +80,6 @@ KongConsumerList contains a list of KongConsumer.
 
 
 KongIngress is the Schema for the kongingresses API.
-
-_Appears in:_
-- [KongIngressList](#kongingresslist)
 
 | Field | Description |
 | --- | --- |
@@ -132,20 +91,6 @@ _Appears in:_
 | `route` _[KongIngressRoute](#kongingressroute)_ | Route define rules to match client requests. Each Route is associated with a Service, and a Service may have multiple Routes associated to it. |
 
 
-### KongIngressList
-
-
-
-KongIngressList contains a list of KongIngress.
-
-
-
-| Field | Description |
-| --- | --- |
-| `apiVersion` _string_ | `configuration.konghq.com/v1`
-| `kind` _string_ | `KongIngressList`
-| `metadata` _[ListMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#listmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |
-| `items` _[KongIngress](#kongingress) array_ |  |
 
 
 ### KongIngressRoute
@@ -153,9 +98,6 @@ KongIngressList contains a list of KongIngress.
 
 
 KongIngressRoute contains KongIngress route configuration. It contains the subset of `go-kong.kong.Route` fields supported by `kongstate.Route.overrideByKongIngress`.
-
-_Appears in:_
-- [KongIngress](#kongingress)
 
 | Field | Description |
 | --- | --- |
@@ -172,14 +114,14 @@ _Appears in:_
 | `response_buffering` _boolean_ | ResponseBuffering sets whether to enable response body buffering or not. |
 
 
+_Appears in:_
+- [KongIngress](#kongingress)
+
 ### KongIngressService
 
 
 
 KongIngressService contains KongIngress service configuration.
-
-_Appears in:_
-- [KongIngress](#kongingress)
 
 | Field | Description |
 | --- | --- |
@@ -191,14 +133,14 @@ _Appears in:_
 | `write_timeout` _integer_ | The timeout in milliseconds between two successive write operations for transmitting a request to the upstream server. |
 
 
+_Appears in:_
+- [KongIngress](#kongingress)
+
 ### KongIngressUpstream
 
 
 
 KongIngressUpstream contains KongIngress upstream configuration. It contains the subset of `go-kong.kong.Upstream` fields supported by `kongstate.Upstream.overrideByKongIngress`.
-
-_Appears in:_
-- [KongIngress](#kongingress)
 
 | Field | Description |
 | --- | --- |
@@ -218,14 +160,14 @@ _Appears in:_
 | `hash_fallback_uri_capture` _string_ | HashFallbackURICapture is the "hash_fallback" version of HashOnURICapture. |
 
 
+_Appears in:_
+- [KongIngress](#kongingress)
+
 ### KongPlugin
 
 
 
 KongPlugin is the Schema for the kongplugins API.
-
-_Appears in:_
-- [KongPluginList](#kongpluginlist)
 
 | Field | Description |
 | --- | --- |
@@ -242,20 +184,6 @@ _Appears in:_
 | `ordering` _[PluginOrdering](#pluginordering)_ | Ordering overrides the normal plugin execution order. |
 
 
-### KongPluginList
-
-
-
-KongPluginList contains a list of KongPlugin.
-
-
-
-| Field | Description |
-| --- | --- |
-| `apiVersion` _string_ | `configuration.konghq.com/v1`
-| `kind` _string_ | `KongPluginList`
-| `metadata` _[ListMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#listmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |
-| `items` _[KongPlugin](#kongplugin) array_ |  |
 
 
 ### KongProtocol
@@ -264,12 +192,12 @@ _Underlying type:_ `string`
 
 
 
+
+
 _Appears in:_
 - [KongClusterPlugin](#kongclusterplugin)
 - [KongIngressRoute](#kongingressroute)
 - [KongPlugin](#kongplugin)
-
-
 
 ### NamespacedConfigSource
 
@@ -277,22 +205,19 @@ _Appears in:_
 
 NamespacedConfigSource is a wrapper around NamespacedSecretValueFromSource.
 
-_Appears in:_
-- [KongClusterPlugin](#kongclusterplugin)
-
 | Field | Description |
 | --- | --- |
 | `secretKeyRef` _[NamespacedSecretValueFromSource](#namespacedsecretvaluefromsource)_ |  |
 
+
+_Appears in:_
+- [KongClusterPlugin](#kongclusterplugin)
 
 ### NamespacedSecretValueFromSource
 
 
 
 NamespacedSecretValueFromSource represents the source of a secret value specifying the secret namespace.
-
-_Appears in:_
-- [NamespacedConfigSource](#namespacedconfigsource)
 
 | Field | Description |
 | --- | --- |
@@ -301,14 +226,14 @@ _Appears in:_
 | `key` _string_ | The key containing the value. |
 
 
+_Appears in:_
+- [NamespacedConfigSource](#namespacedconfigsource)
+
 ### SecretValueFromSource
 
 
 
 SecretValueFromSource represents the source of a secret value.
-
-_Appears in:_
-- [ConfigSource](#configsource)
 
 | Field | Description |
 | --- | --- |
@@ -316,13 +241,15 @@ _Appears in:_
 | `key` _string_ | The key containing the value. |
 
 
+_Appears in:_
+- [ConfigSource](#configsource)
+
 
 ## configuration.konghq.com/v1alpha1
 
 Package v1alpha1 contains API Schema definitions for the configuration.konghq.com v1alpha1 API group.
 
 - [IngressClassParameters](#ingressclassparameters)
-- [IngressClassParametersList](#ingressclassparameterslist)
 
 
 
@@ -332,9 +259,6 @@ Package v1alpha1 contains API Schema definitions for the configuration.konghq.co
 
 IngressClassParameters is the Schema for the IngressClassParameters API.
 
-_Appears in:_
-- [IngressClassParametersList](#ingressclassparameterslist)
-
 | Field | Description |
 | --- | --- |
 | `apiVersion` _string_ | `configuration.konghq.com/v1alpha1`
@@ -343,20 +267,6 @@ _Appears in:_
 | `spec` _[IngressClassParametersSpec](#ingressclassparametersspec)_ |  |
 
 
-### IngressClassParametersList
-
-
-
-IngressClassParametersList contains a list of IngressClassParameters.
-
-
-
-| Field | Description |
-| --- | --- |
-| `apiVersion` _string_ | `configuration.konghq.com/v1alpha1`
-| `kind` _string_ | `IngressClassParametersList`
-| `metadata` _[ListMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#listmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |
-| `items` _[IngressClassParameters](#ingressclassparameters) array_ |  |
 
 
 ### IngressClassParametersSpec
@@ -365,14 +275,14 @@ IngressClassParametersList contains a list of IngressClassParameters.
 
 
 
-_Appears in:_
-- [IngressClassParameters](#ingressclassparameters)
-
 | Field | Description |
 | --- | --- |
 | `serviceUpstream` _boolean_ | Offload load-balancing to kube-proxy or sidecar. |
 | `enableLegacyRegexDetection` _boolean_ | EnableLegacyRegexDetection automatically detects if ImplementationSpecific Ingress paths are regular expression paths using the legacy 2.x heuristic. The controller adds the "~" prefix to those paths if the Kong version is 3.0 or higher. |
 
+
+_Appears in:_
+- [IngressClassParameters](#ingressclassparameters)
 
 
 ## configuration.konghq.com/v1beta1
@@ -380,9 +290,7 @@ _Appears in:_
 Package v1beta1 contains API Schema definitions for the configuration.konghq.com v1beta1 API group.
 
 - [TCPIngress](#tcpingress)
-- [TCPIngressList](#tcpingresslist)
 - [UDPIngress](#udpingress)
-- [UDPIngressList](#udpingresslist)
 
 
 
@@ -392,24 +300,21 @@ Package v1beta1 contains API Schema definitions for the configuration.konghq.com
 
 IngressBackend describes all endpoints for a given service and port.
 
-_Appears in:_
-- [IngressRule](#ingressrule)
-- [UDPIngressRule](#udpingressrule)
-
 | Field | Description |
 | --- | --- |
 | `serviceName` _string_ | Specifies the name of the referenced service. |
 | `servicePort` _integer_ | Specifies the port of the referenced service. |
 
 
+_Appears in:_
+- [IngressRule](#ingressrule)
+- [UDPIngressRule](#udpingressrule)
+
 ### IngressRule
 
 
 
 IngressRule represents a rule to apply against incoming requests. Matching is performed based on an (optional) SNI and port.
-
-_Appears in:_
-- [TCPIngressSpec](#tcpingressspec)
 
 | Field | Description |
 | --- | --- |
@@ -418,14 +323,14 @@ _Appears in:_
 | `backend` _[IngressBackend](#ingressbackend)_ | Backend defines the referenced service endpoint to which the traffic will be forwarded to. |
 
 
+_Appears in:_
+- [TCPIngressSpec](#tcpingressspec)
+
 ### IngressTLS
 
 
 
 IngressTLS describes the transport layer security.
-
-_Appears in:_
-- [TCPIngressSpec](#tcpingressspec)
 
 | Field | Description |
 | --- | --- |
@@ -433,14 +338,14 @@ _Appears in:_
 | `secretName` _string_ | SecretName is the name of the secret used to terminate SSL traffic. |
 
 
+_Appears in:_
+- [TCPIngressSpec](#tcpingressspec)
+
 ### TCPIngress
 
 
 
 TCPIngress is the Schema for the tcpingresses API.
-
-_Appears in:_
-- [TCPIngressList](#tcpingresslist)
 
 | Field | Description |
 | --- | --- |
@@ -450,20 +355,6 @@ _Appears in:_
 | `spec` _[TCPIngressSpec](#tcpingressspec)_ |  |
 
 
-### TCPIngressList
-
-
-
-TCPIngressList contains a list of TCPIngress.
-
-
-
-| Field | Description |
-| --- | --- |
-| `apiVersion` _string_ | `configuration.konghq.com/v1beta1`
-| `kind` _string_ | `TCPIngressList`
-| `metadata` _[ListMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#listmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |
-| `items` _[TCPIngress](#tcpingress) array_ |  |
 
 
 ### TCPIngressSpec
@@ -472,14 +363,14 @@ TCPIngressList contains a list of TCPIngress.
 
 TCPIngressSpec defines the desired state of TCPIngress.
 
-_Appears in:_
-- [TCPIngress](#tcpingress)
-
 | Field | Description |
 | --- | --- |
 | `rules` _[IngressRule](#ingressrule) array_ | A list of rules used to configure the Ingress. |
 | `tls` _[IngressTLS](#ingresstls) array_ | TLS configuration. This is similar to the `tls` section in the Ingress resource in networking.v1beta1 group. The mapping of SNIs to TLS cert-key pair defined here will be used for HTTP Ingress rules as well. Once can define the mapping in this resource or the original Ingress resource, both have the same effect. |
 
+
+_Appears in:_
+- [TCPIngress](#tcpingress)
 
 
 
@@ -489,9 +380,6 @@ _Appears in:_
 
 UDPIngress is the Schema for the udpingresses API.
 
-_Appears in:_
-- [UDPIngressList](#udpingresslist)
-
 | Field | Description |
 | --- | --- |
 | `apiVersion` _string_ | `configuration.konghq.com/v1beta1`
@@ -500,20 +388,6 @@ _Appears in:_
 | `spec` _[UDPIngressSpec](#udpingressspec)_ |  |
 
 
-### UDPIngressList
-
-
-
-UDPIngressList contains a list of UDPIngress.
-
-
-
-| Field | Description |
-| --- | --- |
-| `apiVersion` _string_ | `configuration.konghq.com/v1beta1`
-| `kind` _string_ | `UDPIngressList`
-| `metadata` _[ListMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#listmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |
-| `items` _[UDPIngress](#udpingress) array_ |  |
 
 
 ### UDPIngressRule
@@ -522,14 +396,14 @@ UDPIngressList contains a list of UDPIngress.
 
 UDPIngressRule represents a rule to apply against incoming requests wherein no Host matching is available for request routing, only the port is used to match requests.
 
-_Appears in:_
-- [UDPIngressSpec](#udpingressspec)
-
 | Field | Description |
 | --- | --- |
 | `port` _integer_ | Port indicates the port for the Kong proxy to accept incoming traffic on, which will then be routed to the service Backend. |
 | `backend` _[IngressBackend](#ingressbackend)_ | Backend defines the Kubernetes service which accepts traffic from the listening Port defined above. |
 
+
+_Appears in:_
+- [UDPIngressSpec](#udpingressspec)
 
 ### UDPIngressSpec
 
@@ -537,11 +411,11 @@ _Appears in:_
 
 UDPIngressSpec defines the desired state of UDPIngress.
 
-_Appears in:_
-- [UDPIngress](#udpingress)
-
 | Field | Description |
 | --- | --- |
 | `rules` _[UDPIngressRule](#udpingressrule) array_ | A list of rules used to configure the Ingress. |
 
+
+_Appears in:_
+- [UDPIngress](#udpingress)
 <!-- vale on -->
