@@ -134,8 +134,13 @@ items:
         url: /references/annotations
       - text: CLI Arguments
         url: /references/cli-arguments
-      - text: Custom Resource Definitions
-        url: /references/custom-resources
+      - title: Custom Resource Definitions
+        icon: /assets/images/icons/documentation/icn-kubernetes-color.svg
+        items:
+          - text: API Reference
+            url: /references/custom-resources/reference
+          - text: Usage
+            url: /references/custom-resources/usage
       - text: Plugin Compatibility
         url: /references/plugin-compatibility
       - text: Version Compatibility
