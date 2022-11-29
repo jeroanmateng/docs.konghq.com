@@ -2,6 +2,7 @@
 title: Custom Resource Definitions API Reference 
 ---
 
+<!-- vale off -->
 ## Packages
 - [configuration.konghq.com/v1](#configurationkonghqcomv1)
 - [configuration.konghq.com/v1alpha1](#configurationkonghqcomv1alpha1)
@@ -420,3 +421,5 @@ UDPIngressSpec defines the desired state of UDPIngress.
 
 _Appears in:_
 - [UDPIngress](#udpingress)
+
+<!-- vale on -->
