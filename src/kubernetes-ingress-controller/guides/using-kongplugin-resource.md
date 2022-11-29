@@ -6,6 +6,9 @@ This guide walks you through using the {{site.kic_product_name}}
 `KongPlugin` Custom Resource to control proxied requests, including
 restricting paths and transforming requests.
 
+Please see the [concept](/kubernetes-ingress-controller/{{page.kong_version}}/concepts/custom-resources/#KongPlugin)
+document for understanding the purpose of `KongPlugin` resource.
+
 ## Installation
 
 Please follow the [deployment](/kubernetes-ingress-controller/{{page.kong_version}}/deployment/overview) documentation to install
@@ -274,6 +277,37 @@ Via: kong/2.8.1
 Here, we have successfully set up a plugin which is executed only when a
 request matches a specific `Ingress` rule.
 
+### Storing Plugin's configuration in a secret
+
+The plugin above can be modified to store its configuration in a secret:
+
+```sh
+echo '
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: add-response-header
+configFrom:
+  secretKeyRef:
+    name: plugin-conf-secret
+    key: add-response-header
+plugin: response-transformer
+' | kubectl apply -f -
+```
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: plugin-conf-secret
+stringData:
+  add-response-header: |
+    add:
+      headers:
+        - "demo: injected-by-kong"
+type: Opaque
+```
+
 ## Configuring plugins on Service resource
 
 Next, we will see how we can configure Kong to execute plugins for requests
@@ -435,6 +469,10 @@ credentials:
 ```
 kongconsumer.configuration.konghq.com/harry configured
 ```
+
+**Please note:** validation of the configuration fields is left to the user
+by default. It is advised to setup and use the admission validating controller
+to catch user errors.
 
 Note the annotation being added to the `KongConsumer` resource.
 
