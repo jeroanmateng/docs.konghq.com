@@ -8,7 +8,7 @@ gem 'jekyll-generator-single-source'
 gem 'kramdown-parser-gfm'
 gem 'liquid-c'
 gem 'rouge', '3.30.0'
-gem 'activesupport'
+gem 'activesupport', '>= 7.0.4.1'
 
 group :development do
   gem 'pry'
