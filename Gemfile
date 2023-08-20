@@ -12,7 +12,7 @@ gem 'activesupport'
 
 group :development do
   gem 'pry'
-  gem 'puma'
+  gem 'puma', '>= 5.6.7'
   gem 'reek'
   gem 'rubocop'
   gem 'rspec'
