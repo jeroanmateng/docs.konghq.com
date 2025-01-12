@@ -10,7 +10,7 @@
   "author": "Michael Heap <michael.heap@konghq.com>",
   "license": "MIT",
   "dependencies": {
-    "fast-glob": "^3.2.5",
+    "fast-glob": "^3.3.3",
     "js-yaml": "^4.1.0",
     "pdf-merger-js": "^4.0.0",
     "puppeteer": "^19.0.0",
