@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-gem 'jekyll', '4.2.2'
+gem 'jekyll', '4.3.0'
 gem 'jekyll-include-cache'
 gem 'jekyll-redirect-from'
-gem 'jekyll-generator-single-source'
+gem 'jekyll-generator-single-source', '>= 0.0.3'
 gem 'kramdown-parser-gfm'
 gem 'liquid-c'
 gem 'rouge', '3.30.0'
