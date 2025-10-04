@@ -14,6 +14,6 @@ group :development do
   gem 'pry'
   gem 'puma'
   gem 'reek'
-  gem 'rubocop'
+  gem 'rubocop', '>= 1.66.0'
   gem 'rspec'
 end
