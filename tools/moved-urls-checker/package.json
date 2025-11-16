@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^4.1.1",
     "minimist": "^1.2.6",
     "node-fetch": "^2"
   }
